@@ -38,7 +38,7 @@ export class Header extends Component {
                     <div className='flex items-center justify-between h-20'>
                         {/* logo && navbar */}
                         <div className='flex items-center gap-10'>
-                            <h1 className='italic font-bold text-2xl'>CLOTHING</h1>
+                            <h1 className='italic font-bold text-2xl'><a href="">CLOTHING</a></h1>
                             <nav className='hidden md:block'>
                                 <ul className='flex items-center gap-3 lg:gap-5'>
                                     {this.state.menu.length > 0 && this.state.menu.map(item => (<MenuItem key={item.id} {...item}></MenuItem>))}
