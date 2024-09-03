@@ -7,7 +7,10 @@ module.exports = {
     extend: {
       container: {
         center: true,
-        padding: '2rem',
+        padding: {
+          DEFAULT: '1rem',
+          sm: '0.5rem',
+        },
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

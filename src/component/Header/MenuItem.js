@@ -6,7 +6,7 @@ export class MenuItem extends Component {
         let { link, title } = this.props
         return (
             <li>
-                <a href={link}>{title}</a>
+                <a href={link} className='cursor-pointer transition-colors delay-75 hover:text-blue-400'>{title}</a>
             </li>
         )
     }
