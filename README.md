@@ -51,6 +51,7 @@ To run the application locally, use the following command:
    npm start
    ```
    This will start the development server, and you can view the application in your browser at http://localhost:3000.
+   
 5. **Building the Project**
 To create a production build, use:
   ```bash
