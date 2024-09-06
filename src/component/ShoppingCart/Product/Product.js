@@ -11,7 +11,7 @@ export class Product extends Component {
                 </div>
                 <div className='p-3'>
                     <h2 className=' text-center text-xl line-clamp-1'>{title}</h2>
-                    <div className='flex justify-center items-center gap-3 my-3'>
+                    <div className='flex justify-center items-center gap-3 my-3 flex-wrap'>
                         <div>
                             <label htmlFor="size" className='pr-2'>Size:</label>
                             <select name="size" id="size" className='border rounded-md outline-none'>

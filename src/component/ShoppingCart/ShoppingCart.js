@@ -98,7 +98,7 @@ export class ShoppingCart extends Component {
                 <main className='my-8'>
                     <div className="container">
                         {/* product wrapper */}
-                        <div className='grid grid-cols-4 gap-6'>
+                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
                             {this.state.products.length > 0 && this.state.products.map(product => (<Product key={product.id} {...product}></Product>))}
                         </div>
                     </div>
