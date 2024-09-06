@@ -10,3 +10,9 @@
     @apply font-poppins font-medium
   }
 }
+
+@layer components {
+  body {
+    @apply bg-gray-200
+  }
+}

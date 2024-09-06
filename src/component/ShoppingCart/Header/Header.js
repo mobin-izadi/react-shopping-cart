@@ -32,7 +32,7 @@ export class Header extends Component {
     render() {
 
         return (
-            <header>
+            <header className='bg-white'>
                 <div className="container">
                     {/* header Wrapper */}
                     <div className='flex items-center justify-between h-20'>
