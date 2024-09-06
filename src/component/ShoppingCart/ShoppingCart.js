@@ -9,7 +9,7 @@ export class ShoppingCart extends Component {
                 {
                     id: 1,
                     title: "Men's Casual Shirt",
-                    color: "Blue",
+                    color: ["Blue", "Black", "White"],
                     description: "A comfortable, casual shirt made from 100% cotton, perfect for everyday wear.",
                     quantity: 10,
                     price: 29.99,
@@ -19,7 +19,7 @@ export class ShoppingCart extends Component {
                 {
                     id: 2,
                     title: "Women's Summer Dress",
-                    color: "Red",
+                    color: ["Red", "Pink", "Yellow"],
                     description: "A stylish summer dress, lightweight and breathable for hot weather.",
                     quantity: 5,
                     price: 45.99,
@@ -29,7 +29,7 @@ export class ShoppingCart extends Component {
                 {
                     id: 3,
                     title: "Unisex Hoodie",
-                    color: "Black",
+                    color: ["Black", "Gray", "Navy"],
                     description: "A cozy hoodie with a front pocket, ideal for both men and women.",
                     quantity: 8,
                     price: 39.99,
@@ -39,7 +39,7 @@ export class ShoppingCart extends Component {
                 {
                     id: 4,
                     title: "Kids' T-Shirt",
-                    color: "Yellow",
+                    color: ["Yellow", "Blue", "Green"],
                     description: "Soft and durable t-shirt for kids, suitable for everyday play.",
                     quantity: 12,
                     price: 15.99,
@@ -49,7 +49,7 @@ export class ShoppingCart extends Component {
                 {
                     id: 5,
                     title: "Men's Jeans",
-                    color: "Dark Blue",
+                    color: ["Dark Blue", "Light Blue", "Black"],
                     description: "Classic fit jeans with a comfortable stretch, ideal for casual outings.",
                     quantity: 7,
                     price: 49.99,
@@ -59,7 +59,7 @@ export class ShoppingCart extends Component {
                 {
                     id: 6,
                     title: "Women's Jacket",
-                    color: "Green",
+                    color: ["Green", "Black", "Gray"],
                     description: "A waterproof, lightweight jacket for rainy days.",
                     quantity: 4,
                     price: 59.99,
@@ -69,7 +69,7 @@ export class ShoppingCart extends Component {
                 {
                     id: 7,
                     title: "Men's Running Shoes",
-                    color: "White",
+                    color: ["White", "Black", "Gray"],
                     description: "Lightweight running shoes designed for comfort and performance.",
                     quantity: 15,
                     price: 89.99,
@@ -79,7 +79,7 @@ export class ShoppingCart extends Component {
                 {
                     id: 8,
                     title: "Women's Scarf",
-                    color: "Purple",
+                    color: ["Purple", "Red", "Blue"],
                     description: "A stylish, soft scarf made from premium materials, perfect for cold weather.",
                     quantity: 20,
                     price: 19.99,
@@ -88,6 +88,7 @@ export class ShoppingCart extends Component {
                 }
             ]
         };
+
 
     }
     render() {
