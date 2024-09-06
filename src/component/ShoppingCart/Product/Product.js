@@ -15,13 +15,13 @@ export class Product extends Component {
                         <div>
                             <label htmlFor="size" className='pr-2'>Size:</label>
                             <select name="size" id="size" className='border rounded-md outline-none'>
-                                {size.map(size => (<Option key={size} value={size}></Option>))}
+                                {size.length > 0 ? size.map(size => (<Option key={size} value={size}></Option>)) : (<option></option>)}
                             </select>
                         </div>
                         <div>
                             <label htmlFor="color" className='pr-2'>Color:</label>
                             <select name="color" id="color" className='border rounded-md outline-none'>
-                                {color.map(color => (<Option key={color} value={color}></Option>))}
+                                {color.length > 0 ? color.map(color => (<Option key={color} value={color}></Option>)) : (<option></option>)}
                             </select>
 
                         </div>
