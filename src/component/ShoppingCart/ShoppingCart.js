@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header/Header'
 import Product from './Product/Product'
 import CartItem from './CartItem/CartItem'
+import DeliveryItem from './DeliveryItem/DeliveryItem'
 export class ShoppingCart extends Component {
     constructor(props) {
         super(props)
@@ -88,7 +89,37 @@ export class ShoppingCart extends Component {
                     img: 'images/products/8.jpg'
                 }
             ],
-            cart: []
+            cart: [],
+            delivery: [
+                {
+                    id: 1,
+                    img: 'images/delivery/1.jpg',
+                    title: 'Uber Eats',
+                    caption: 'Fast and reliable food delivery.',
+                    price: 3.99
+                },
+                {
+                    id: 2,
+                    img: 'images/delivery/2.jpg',
+                    title: 'DoorDash',
+                    caption: 'Get your favorite meals delivered.',
+                    price: 4.99
+                },
+                {
+                    id: 3,
+                    img: 'images/delivery/3.jpg',
+                    title: 'Grubhub',
+                    caption: 'Order food from local restaurants.',
+                    price: 2.99
+                },
+                {
+                    id: 4,
+                    img: 'images/delivery/3.jpg',
+                    title: 'Postmates',
+                    caption: 'Anything you need, delivered.',
+                    price: 5.49
+                }
+            ]
         };
 
         this.addCart = this.addCart.bind(this)
@@ -159,8 +190,8 @@ export class ShoppingCart extends Component {
                                 {/* delivery */}
                                 <div className='my-16'>
                                     <h4 className='text-3xl mb-3'>Delivery</h4>
-                                    <div className='gird grid-cols-4 p-3 '>
-
+                                    <div className='grid grid-cols-2 p-3 '>
+                                        <DeliveryItem></DeliveryItem>
                                     </div>
 
                                 </div>
