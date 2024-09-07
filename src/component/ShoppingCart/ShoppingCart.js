@@ -96,39 +96,62 @@ export class ShoppingCart extends Component {
                     img: 'images/delivery/1.jpg',
                     title: 'Uber Eats',
                     caption: 'Fast and reliable food delivery.',
-                    price: 3.99
+                    price: 3.99,
+                    selected: false
                 },
                 {
                     id: 2,
                     img: 'images/delivery/2.jpg',
                     title: 'DoorDash',
                     caption: 'Get your favorite meals delivered.',
-                    price: 4.99
+                    price: 4.99,
+                    selected: false
                 },
                 {
                     id: 3,
                     img: 'images/delivery/3.jpg',
                     title: 'Grubhub',
                     caption: 'Order food from local restaurants.',
-                    price: 2.99
+                    price: 2.99,
+                    selected: false
                 },
                 {
                     id: 4,
                     img: 'images/delivery/4.jpg',
                     title: 'Postmates',
                     caption: 'Anything you need, delivered.',
-                    price: 5.49
+                    price: 5.49,
+                    selected: false
                 }
-            ]
+            ],
+            chooseDelivery: null
+
         };
 
         this.addCart = this.addCart.bind(this)
         this.updateCart = this.updateCart.bind(this)
         this.removeProductFromCart = this.removeProductFromCart.bind(this)
+        this.addDelivery = this.addDelivery.bind(this)
 
 
     }
 
+    addDelivery(id) {
+        let mainDelivery = this.state.delivery.find(delivery => delivery.id === id)
+
+        this.setState(preState => ({
+            chooseDelivery: mainDelivery,
+            delivery: preState.delivery.map(delivery => {
+                if (delivery.id == id) {
+                    let newDelivery = { ...delivery, selected: true }
+                    return newDelivery
+                } else {
+                    return { ...delivery, selected: false }
+                }
+            })
+        }))
+
+    }
     removeProductFromCart(id) {
         this.setState(preState => ({
             cart: preState.cart.filter(product => product.id != id)
@@ -191,7 +214,7 @@ export class ShoppingCart extends Component {
                                 <div className='my-16'>
                                     <h4 className='text-3xl mb-3'>Delivery</h4>
                                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5 p-3 '>
-                                        {this.state.delivery.map(delivery => (<DeliveryItem key={delivery.id} {...delivery}></DeliveryItem>))}
+                                        {this.state.delivery.map(delivery => (<DeliveryItem key={delivery.id} {...delivery} onChooseDelivery={this.addDelivery}></DeliveryItem>))}
 
                                     </div>
 
