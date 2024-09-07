@@ -156,6 +156,14 @@ export class ShoppingCart extends Component {
                                     </div>
 
                                 </div>
+                                {/* delivery */}
+                                <div className='my-16'>
+                                    <h4 className='text-3xl mb-3'>Delivery</h4>
+                                    <div className='gird grid-cols-4 p-3 '>
+
+                                    </div>
+
+                                </div>
                             </div>
                             {/* right */}
                             <div className='col-span-4'>
