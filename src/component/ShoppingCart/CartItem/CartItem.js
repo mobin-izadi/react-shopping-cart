@@ -1,6 +1,30 @@
 import React, { Component } from 'react'
+import { AiFillDelete } from "react-icons/ai";
 
 export class CartItem extends Component {
+    constructor(props) {
+        super(props)
+
+        this.changeCount = this.changeCount.bind(this)
+        this.removeProduct = this.removeProduct.bind(this)
+
+    }
+
+    removeProduct(id) {
+        this.props.onRemove(id)
+    }
+
+    changeCount(event, id) {
+        let newCount = null
+        if (event.target.value > 0) {
+            newCount = event.target.value
+        } else {
+            newCount = 1
+        }
+
+        this.props.onUpdateCart(newCount, id)
+
+    }
     render() {
         let { id, color, size, title, count, price, img } = this.props
         return (
@@ -19,8 +43,11 @@ export class CartItem extends Component {
                 <p>{price * count}<span>$</span></p>
                 <div>
                     <span className='text-gray-400'>Count: </span>
-                    <input type="number" value={count} className='border w-14 h-10 text-center rounded-lg' />
+                    <input type="number" value={count} className='border outline-none w-14 h-10 text-center rounded-lg' onChange={event => this.changeCount(event, id)} />
                 </div>
+                <AiFillDelete className='w-6 h-6 cursor-pointer  mr-4' onClick={() => this.removeProduct(id)} />
+
+
 
             </div>
         )
