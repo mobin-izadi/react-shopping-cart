@@ -114,7 +114,7 @@ export class ShoppingCart extends Component {
                 },
                 {
                     id: 4,
-                    img: 'images/delivery/3.jpg',
+                    img: 'images/delivery/4.jpg',
                     title: 'Postmates',
                     caption: 'Anything you need, delivered.',
                     price: 5.49
@@ -190,8 +190,9 @@ export class ShoppingCart extends Component {
                                 {/* delivery */}
                                 <div className='my-16'>
                                     <h4 className='text-3xl mb-3'>Delivery</h4>
-                                    <div className='grid grid-cols-2 p-3 '>
-                                        <DeliveryItem></DeliveryItem>
+                                    <div className='grid grid-cols-1 md:grid-cols-2 gap-5 p-3 '>
+                                        {this.state.delivery.map(delivery => (<DeliveryItem key={delivery.id} {...delivery}></DeliveryItem>))}
+
                                     </div>
 
                                 </div>
