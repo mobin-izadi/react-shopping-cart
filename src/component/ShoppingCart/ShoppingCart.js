@@ -97,7 +97,13 @@ export class ShoppingCart extends Component {
 
 
     addCart(id, color, size) {
-        console.log(id, color, size);
+        let findProduct = this.state.products.filter(product => product.id == id)
+
+        let newProductCart = { ...findProduct[0], color, size, count: 1 }
+
+        this.setState(preState => ({
+            cart: [...preState.cart, newProductCart]
+        }))
 
     }
     render() {
