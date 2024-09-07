@@ -123,8 +123,9 @@ export class ShoppingCart extends Component {
                                 {/* order */}
                                 <div>
                                     <h4 className='text-3xl mb-3'>Order</h4>
-                                    <div className='bg-white rounded-lg  p-3'>
-                                        <CartItem></CartItem>
+                                    <div className='bg-white rounded-lg min-h-40  p-3 space-y-2'>
+                                        {this.state.cart.length > 0 ? (this.state.cart.map(product => <CartItem key={product.id} {...product} ></CartItem>)) : (<p className='text-center'>You have not added a product yet.</p>)}
+
                                     </div>
 
                                 </div>
