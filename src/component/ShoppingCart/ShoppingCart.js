@@ -86,9 +86,18 @@ export class ShoppingCart extends Component {
                     size: ["One Size"],
                     img: 'images/products/8.jpg'
                 }
-            ]
+            ],
+            cart: []
         };
 
+        this.addCart = this.addCart.bind(this)
+
+
+    }
+
+
+    addCart(id, color, size) {
+        console.log(id, color, size);
 
     }
     render() {
@@ -99,7 +108,7 @@ export class ShoppingCart extends Component {
                     <div className="container">
                         {/* product wrapper */}
                         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
-                            {this.state.products.length > 0 && this.state.products.map(product => (<Product key={product.id} {...product}></Product>))}
+                            {this.state.products.length > 0 && this.state.products.map(product => (<Product key={product.id} {...product} onAddCart={this.addCart}></Product>))}
                         </div>
                     </div>
                 </main>
