@@ -43,14 +43,14 @@ export class Product extends Component {
                     <h2 className=' text-center text-xl line-clamp-1'>{title}</h2>
                     <div className='flex justify-center items-center gap-3 my-3 flex-wrap'>
                         <div>
-                            <label htmlFor="size" className='pr-2'>Size:</label>
-                            <select name="size" id="size" className='border rounded-md outline-none' onChange={this.changeSize}>
+                            <label htmlFor={`size${id}`} className='pr-2'>Size:</label>
+                            <select name='size' id={`size${id}`} className='border rounded-md outline-none' onChange={this.changeSize}>
                                 {size.length > 0 ? size.map(size => (<Option key={size} value={size}></Option>)) : (<option></option>)}
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="color" className='pr-2'>Color:</label>
-                            <select name="color" id="color" className='border rounded-md outline-none' onChange={this.changeColor}>
+                            <label htmlFor={`color${id}`} className='pr-2'>Color:</label>
+                            <select name={`color`} id={`color${id}`} className='border rounded-md outline-none' onChange={this.changeColor}>
                                 {color.length > 0 ? color.map(color => (<Option key={color} value={color}></Option>)) : (<option></option>)}
                             </select>
 

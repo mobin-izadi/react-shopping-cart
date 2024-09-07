@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header/Header'
 import Product from './Product/Product'
+import CartItem from './CartItem/CartItem'
 export class ShoppingCart extends Component {
     constructor(props) {
         super(props)
@@ -116,6 +117,24 @@ export class ShoppingCart extends Component {
                         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
                             {this.state.products.length > 0 && this.state.products.map(product => (<Product key={product.id} {...product} onAddCart={this.addCart}></Product>))}
                         </div>
+                        <div className='grid grid-cols-12 gap-4 my-16'>
+                            {/* left */}
+                            <div className='col-span-8'>
+                                {/* order */}
+                                <div>
+                                    <h4 className='text-3xl mb-3'>Order</h4>
+                                    <div className='bg-white rounded-lg  p-3'>
+                                        <CartItem></CartItem>
+                                    </div>
+
+                                </div>
+                            </div>
+                            {/* right */}
+                            <div className='col-span-4'>
+
+                            </div>
+                        </div>
+
                     </div>
                 </main>
             </>
