@@ -103,20 +103,25 @@ export class ShoppingCart extends Component {
             cart: preState.cart.filter(product => product.id != id)
         }))
     }
-
     addCart(id, color, size) {
-        let findProduct = this.state.products.filter(product => product.id == id)
+        let productInCart = this.state.cart.find(product => product.id == id)
+        if (productInCart) {
+            let newCount = productInCart.count + 1
+            this.updateCart(newCount, id)
+        } else {
+            let findProduct = this.state.products.filter(product => product.id == id)
 
-        let newProductCart = { ...findProduct[0], color, size, count: 1 }
+            let newProductCart = { ...findProduct[0], color, size, count: 1 }
 
-        this.setState(preState => ({
-            cart: [...preState.cart, newProductCart]
-        }))
+            this.setState(preState => ({
+                cart: [...preState.cart, newProductCart]
+            }))
+        }
+
 
     }
     updateCart(newCount, id) {
-        console.log(newCount);
-        console.log(id);
+
         this.setState(preState => ({
             cart: preState.cart.map(product => {
                 if (product.id == id) {
@@ -141,7 +146,7 @@ export class ShoppingCart extends Component {
                         </div>
                         <div className='grid grid-cols-12 gap-4 my-16'>
                             {/* left */}
-                            <div className='col-span-8'>
+                            <div className='col-span-12 lg:col-span-8'>
                                 {/* order */}
                                 <div>
                                     <h4 className='text-3xl mb-3'>Order</h4>

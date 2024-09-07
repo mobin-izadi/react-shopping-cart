@@ -28,8 +28,8 @@ export class CartItem extends Component {
     render() {
         let { id, color, size, title, count, price, img } = this.props
         return (
-            <div className='flex justify-between items-center gap-2 border-b pb-3'>
-                <div className='flex gap-3 items-center basis-3/5'>
+            <div className='flex justify-between items-center gap-2 border-b pb-3 flex-wrap md:flex-nowrap'>
+                <div className='flex gap-3 items-center justify-center md:justify-normal basis-full md:basis-3/5'>
                     <div className='w-40 aspect-square rounded-lg overflow-hidden'>
                         <img src={img} className='w-full h-full object-cover' alt="" />
                     </div>
