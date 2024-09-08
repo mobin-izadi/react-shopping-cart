@@ -7,7 +7,7 @@
 
 @layer base {
   body {
-    @apply font-poppins font-medium overflow-y-hidden
+    @apply font-poppins font-medium overflow-x-hidden
   }
 
   input[type=number]::-webkit-inner-spin-button,
