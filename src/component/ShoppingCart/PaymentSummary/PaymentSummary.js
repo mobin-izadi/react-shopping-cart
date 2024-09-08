@@ -35,7 +35,7 @@ export class PaymentSummary extends Component {
                     <div className=' py-3 space-y-3 border-b border-dashed'>
                         <div className='flex justify-between items-center'>
                             <span className='text-gray-300 font-normal'>Total Price</span>
-                            <span>{total} $</span>
+                            <span>{total.toFixed(2)} $</span>
                         </div>
                         <div className='flex justify-between items-center'>
                             <span className='text-gray-300 font-normal'>Offer</span>
