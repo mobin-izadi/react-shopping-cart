@@ -4,6 +4,7 @@ import Product from './Product/Product'
 import CartItem from './CartItem/CartItem'
 import DeliveryItem from './DeliveryItem/DeliveryItem'
 import PaymentSummary from './PaymentSummary/PaymentSummary'
+import { FaTrashAlt } from "react-icons/fa";
 export class ShoppingCart extends Component {
     constructor(props) {
         super(props)
@@ -129,9 +130,11 @@ export class ShoppingCart extends Component {
             note: 'If you want to write additional explanations about orders, write in this section',
             totalProductsInCart: 0,
             deliveryFee: 0,
-            offer: 0
-
-
+            offer: 0,
+            offerCode: [
+                { id: 1, code: 'mobin', offer: 10 },
+                { id: 2, code: 'izadi', offer: 20 }
+            ]
         };
 
         this.addCart = this.addCart.bind(this)
@@ -139,6 +142,23 @@ export class ShoppingCart extends Component {
         this.removeProductFromCart = this.removeProductFromCart.bind(this)
         this.addDelivery = this.addDelivery.bind(this)
         this.noteHandler = this.noteHandler.bind(this)
+        this.offerCheck = this.offerCheck.bind(this)
+        this.emptyCart = this.emptyCart.bind(this)
+
+    }
+    emptyCart() {
+        this.setState({
+            cart: []
+        })
+    }
+    offerCheck(codeOffer) {
+
+        let mainCode = this.state.offerCode.find(code => (code.code == codeOffer))
+        if (mainCode) {
+            this.setState({
+                offer: mainCode.offer
+            })
+        }
 
     }
 
@@ -231,7 +251,9 @@ export class ShoppingCart extends Component {
                                     <h4 className='text-3xl mb-3'>Order</h4>
                                     <div className='bg-white rounded-lg min-h-40  p-3 space-y-2'>
                                         {this.state.cart.length > 0 ? (this.state.cart.map(product => <CartItem key={product.id} {...product} onUpdateCart={this.updateCart} onRemove={this.removeProductFromCart} ></CartItem>)) : (<p className='text-center'>You have not added a product yet.</p>)}
-
+                                        {
+                                            this.state.cart.length > 0 && (<div className="flex justify-center items-center"><button className="py-3 px-4 bg-red-500 text-white rounded-lg flex items-center gap-2 " onClick={this.emptyCart}>Empty Cart <FaTrashAlt className='w-4 h-4' /></button></div>)
+                                        }
                                     </div>
 
                                 </div>
@@ -257,7 +279,7 @@ export class ShoppingCart extends Component {
                             {/* right */}
                             <div className='col-span-12 lg:col-span-4'>
                                 {/* payment */}
-                                <PaymentSummary total={this.state.totalProductsInCart} offer={this.state.offer} delivery={this.state.deliveryFee} ></PaymentSummary>
+                                <PaymentSummary total={this.state.totalProductsInCart} offer={this.state.offer} delivery={this.state.deliveryFee} onAddOffer={this.offerCheck} ></PaymentSummary>
                             </div>
                         </div>
 
