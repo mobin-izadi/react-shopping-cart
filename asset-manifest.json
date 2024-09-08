@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-shopping-cart/static/css/main.9fec1bb7.css",
-    "main.js": "/react-shopping-cart/static/js/main.1b41b643.js",
+    "main.css": "/react-shopping-cart/static/css/main.51be3367.css",
+    "main.js": "/react-shopping-cart/static/js/main.c04ce8f2.js",
     "static/js/453.59eb9ae1.chunk.js": "/react-shopping-cart/static/js/453.59eb9ae1.chunk.js",
     "index.html": "/react-shopping-cart/index.html",
-    "main.9fec1bb7.css.map": "/react-shopping-cart/static/css/main.9fec1bb7.css.map",
-    "main.1b41b643.js.map": "/react-shopping-cart/static/js/main.1b41b643.js.map",
+    "main.51be3367.css.map": "/react-shopping-cart/static/css/main.51be3367.css.map",
+    "main.c04ce8f2.js.map": "/react-shopping-cart/static/js/main.c04ce8f2.js.map",
     "453.59eb9ae1.chunk.js.map": "/react-shopping-cart/static/js/453.59eb9ae1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fec1bb7.css",
-    "static/js/main.1b41b643.js"
+    "static/css/main.51be3367.css",
+    "static/js/main.c04ce8f2.js"
   ]
 }
