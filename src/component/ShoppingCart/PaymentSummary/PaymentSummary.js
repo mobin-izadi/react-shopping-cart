@@ -28,7 +28,7 @@ export class PaymentSummary extends Component {
             <div>
                 <h4 className="text-3xl mb-3">Payment Summary</h4>
                 <div className="bg-white rounded-lg  p-3 ">
-                    <div className='flex justify-between border-b border-dashed py-6'>
+                    <div className='flex justify-between flex-wrap gap-1 border-b border-dashed py-6'>
                         <input type="text" placeholder='COUPON CODE' className='border rounded-lg basis-4/6 p-2 outline-none' onChange={this.offerInputHandler} value={this.state.offerInput} />
                         <button className='bg-blue-300 text-blue-600 rounded-lg py-2 px-4 basis-2/6' onClick={this.offerHandler}>Apply</button>
                     </div>
