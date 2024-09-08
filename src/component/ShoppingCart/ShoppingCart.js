@@ -3,6 +3,7 @@ import Header from './Header/Header'
 import Product from './Product/Product'
 import CartItem from './CartItem/CartItem'
 import DeliveryItem from './DeliveryItem/DeliveryItem'
+import PaymentSummary from './PaymentSummary/PaymentSummary'
 export class ShoppingCart extends Component {
     constructor(props) {
         super(props)
@@ -206,6 +207,7 @@ export class ShoppingCart extends Component {
                         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
                             {this.state.products.length > 0 && this.state.products.map(product => (<Product key={product.id} {...product} onAddCart={this.addCart}></Product>))}
                         </div>
+
                         <div className='grid grid-cols-12 gap-4 my-16'>
                             {/* left */}
                             <div className='col-span-12 lg:col-span-8'>
@@ -219,7 +221,7 @@ export class ShoppingCart extends Component {
 
                                 </div>
                                 {/* delivery */}
-                                <div className='my-16'>
+                                <div className='my-8 md:my-16'>
                                     <h4 className='text-3xl mb-3'>Delivery</h4>
                                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5 p-3 '>
                                         {this.state.delivery.map(delivery => (<DeliveryItem key={delivery.id} {...delivery} onChooseDelivery={this.addDelivery}></DeliveryItem>))}
@@ -239,7 +241,8 @@ export class ShoppingCart extends Component {
                             </div>
                             {/* right */}
                             <div className='col-span-4'>
-
+                                {/* payment */}
+                                <PaymentSummary></PaymentSummary>
                             </div>
                         </div>
 
