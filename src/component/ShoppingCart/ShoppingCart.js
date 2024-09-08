@@ -126,7 +126,11 @@ export class ShoppingCart extends Component {
                 }
             ],
             chooseDelivery: null,
-            note: 'If you want to write additional explanations about orders, write in this section'
+            note: 'If you want to write additional explanations about orders, write in this section',
+            totalProductsInCart: 0,
+            deliveryFee: 0,
+            offer: 0
+
 
         };
 
@@ -136,11 +140,11 @@ export class ShoppingCart extends Component {
         this.addDelivery = this.addDelivery.bind(this)
         this.noteHandler = this.noteHandler.bind(this)
 
-
     }
 
     addDelivery(id) {
         let mainDelivery = this.state.delivery.find(delivery => delivery.id === id)
+        console.log(mainDelivery);
 
         this.setState(preState => ({
             chooseDelivery: mainDelivery,
@@ -151,7 +155,9 @@ export class ShoppingCart extends Component {
                 } else {
                     return { ...delivery, selected: false }
                 }
-            })
+            }),
+            deliveryFee: mainDelivery.price
+
         }))
 
     }
@@ -174,8 +180,6 @@ export class ShoppingCart extends Component {
                 cart: [...preState.cart, newProductCart]
             }))
         }
-
-
     }
     updateCart(newCount, id) {
 
@@ -197,6 +201,17 @@ export class ShoppingCart extends Component {
         })
 
     }
+
+    componentDidUpdate(prevProps, prevState) {
+
+        if (prevState.cart !== this.state.cart) {
+            let sum = this.state.cart.reduce((acc, product) => acc + (product.price * product.count), 0);
+            this.setState({
+                totalProductsInCart: sum
+            })
+        }
+    }
+
     render() {
         return (
             <>
@@ -240,9 +255,9 @@ export class ShoppingCart extends Component {
                                 </div>
                             </div>
                             {/* right */}
-                            <div className='col-span-4'>
+                            <div className='col-span-12 lg:col-span-4'>
                                 {/* payment */}
-                                <PaymentSummary></PaymentSummary>
+                                <PaymentSummary total={this.state.totalProductsInCart} offer={this.state.offer} delivery={this.state.deliveryFee} ></PaymentSummary>
                             </div>
                         </div>
 
