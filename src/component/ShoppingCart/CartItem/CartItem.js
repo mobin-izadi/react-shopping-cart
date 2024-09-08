@@ -40,7 +40,7 @@ export class CartItem extends Component {
                     </div>
 
                 </div>
-                <p>{price * count}<span>$</span></p>
+                <p>{(price * count).toFixed(2)}<span>$</span></p>
                 <div>
                     <span className='text-gray-400'>Count: </span>
                     <input type="number" value={count} className='border outline-none w-14 h-10 text-center rounded-lg' onChange={event => this.changeCount(event, id)} />
