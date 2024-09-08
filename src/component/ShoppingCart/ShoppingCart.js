@@ -124,7 +124,8 @@ export class ShoppingCart extends Component {
                     selected: false
                 }
             ],
-            chooseDelivery: null
+            chooseDelivery: null,
+            note: 'If you want to write additional explanations about orders, write in this section'
 
         };
 
@@ -132,6 +133,7 @@ export class ShoppingCart extends Component {
         this.updateCart = this.updateCart.bind(this)
         this.removeProductFromCart = this.removeProductFromCart.bind(this)
         this.addDelivery = this.addDelivery.bind(this)
+        this.noteHandler = this.noteHandler.bind(this)
 
 
     }
@@ -188,6 +190,12 @@ export class ShoppingCart extends Component {
         }))
 
     }
+    noteHandler(event) {
+        this.setState({
+            note: event.target.value
+        })
+
+    }
     render() {
         return (
             <>
@@ -217,6 +225,15 @@ export class ShoppingCart extends Component {
                                         {this.state.delivery.map(delivery => (<DeliveryItem key={delivery.id} {...delivery} onChooseDelivery={this.addDelivery}></DeliveryItem>))}
 
                                     </div>
+
+                                </div>
+                                {/* Note */}
+                                <div>
+                                    <h4 className='text-3xl mb-3'>Note</h4>
+                                    <textarea className='bg-white rounded-lg min-h-40  p-3 space-y-2 w-full outline-none font-normal' onChange={this.noteHandler} value={this.state.note}>
+
+
+                                    </textarea>
 
                                 </div>
                             </div>
