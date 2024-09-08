@@ -4,7 +4,7 @@ This mini project is a simple shopping cart developed using React and Tailwind. 
 
 ## 🌟 Features
 - Ability to add and remove products in the cart
-- Ability to apply discount codes
+- Ability to apply discount codes(Two discount codes for testing=>mobin,izadi)
 - Ability to modify products in the cart
 - Ability to remove individual products and empty the entire cart
 - Option to choose the shipping method
@@ -72,7 +72,7 @@ To create a production build, use:
 
 ## 🌟 ویژگی‌ها
 - قابلیت افزودن و حذف محصولات در سبد خرید
-- قابلیت ثبت کد تخفیف
+- (دو کد تخفیف برای تست : mobin,izadi)قابلیت ثبت کد تخفیف
 - قابلیت تغییر محصولات داخل سبد
 - قابلیت حذف تک‌تک محصولات یا خالی کردن کل سبد
 - امکان انتخاب روش ارسال محصول
