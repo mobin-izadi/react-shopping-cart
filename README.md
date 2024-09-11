@@ -1,3 +1,9 @@
+![shopping cart](./public/images/thumbnail.jpg)
+
+[View Online Version](https://mobin-izadi.github.io/react-shopping-cart/) |
+[View Desktop Version Image](./public/images/screen-pc.png) 💻 |
+[View Mobile Version Image](./public/images/screen-mobile.png) 📱
+
 # 🛒 Shopping Cart (React)
 
 This mini project is a simple shopping cart developed using React and Tailwind. I created this mini project to challenge myself on my journey to learning React.
